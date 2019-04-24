@@ -1,0 +1,12 @@
+{
+  "name": "DataStructureTraining",
+  "version": "1.0.0",
+  "description": "Training exercises to teach basic data structure concepts",
+  "repository": "git@github.com:bwbonanno/DataStructureTraining.git",
+  "author": "Bradford Bonanno <bwbonanno@wpi.edu>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "jest": "^24.7.1"
+  }
+}
