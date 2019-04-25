@@ -2,8 +2,8 @@
 
 ### Description
 
-A stack is often described as a first-in-first-out structure. This means that
-the first items that are "pushed" into the structure are also the first "popped"
+A stack is often described as a last-in-first-out structure. This means that
+the first items that are "pushed" into the structure are the last "popped"
 out. These are the two primary operations defined on a stack. **Push** will add
 an item to the structure, **pop** will remove the most recently added item from
 the structure. For a deeper understanding, additional reading can be found

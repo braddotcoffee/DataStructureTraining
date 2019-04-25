@@ -1,7 +1,22 @@
-var stack_module = require(process.env.STACK_FILE || './stack')
+const fs = require("fs");
+const path = require("path");
 
-var push = stack_module.push
-var pop = stack_module.pop
+const stack_file_name = process.env.STACK_FILE || 'stack.js';
+const stack_file = path.resolve(__dirname + "/" + stack_file_name);
+const stack_module = require(stack_file)
+
+const push = stack_module.push
+const pop = stack_module.pop
+
+test("stack_module does not reference built in push", function() {
+  const declaration = fs.readFileSync(stack_file);
+  expect(declaration.toString().includes("Array.prototype.push")).toBe(false);
+})
+
+test("stack_module does not reference built in pop", function() {
+  const declaration = fs.readFileSync(stack_file);
+  expect(declaration.toString().includes("Array.prototype.pop")).toBe(false);
+})
 
 test("push does not use built in array push", function() {
   var declaration = push.toString();
@@ -16,8 +31,8 @@ test("pop does not use built in array pop", function() {
 })
 
 test("push does not mutate the given array", function(){
-  var stack = []
-  var stack2 = push(stack, 1);
+  const stack = []
+  push(stack, 1);
   expect(stack.length).toBe(0);
 })
 
@@ -63,6 +78,6 @@ test("pop returns elements in the reverse order that they are pushed", function(
 })
 
 test("pop when empty returns undefined item", function(){
-  var stack = []
+  const stack = []
   expect(pop(stack)[1]).toBe(undefined);
 })

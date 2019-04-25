@@ -8,5 +8,8 @@
   "private": false,
   "dependencies": {
     "jest": "^24.7.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
