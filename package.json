@@ -11,5 +11,8 @@
   },
   "jest": {
     "testEnvironment": "node"
+  },
+  "scripts": {
+    "test": "jest --rootDir $INIT_CWD"
   }
 }

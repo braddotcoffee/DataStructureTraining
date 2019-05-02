@@ -38,4 +38,4 @@ pop(stack);     // [], returns 1
 Your goal is to define these functions within the `stack.js` file. **Do not** use the JavaScript `array.push()`
 and `array.pop()` functions within your implementation, as this defeats the purpose of the exercise.
 Treat the given arrays as though they are immutable.
-To check your solutions, run the pre-defined test cases using the command `jest` within this directory.
+To check your solutions, run the pre-defined test cases using the command `yarn test` within this directory.
