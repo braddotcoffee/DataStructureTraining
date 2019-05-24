@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const queue_file_name = process.env.QUEUE_FILE || 'queue';
+const queue_file_name = process.env.QUEUE_FILE || 'queue.js';
 const queue_file = path.resolve(__dirname + "/" + queue_file_name);
 const queue_module = require(queue_file);
 
